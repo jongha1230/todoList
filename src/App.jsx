@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import TodoForm from "./TodoForm";
-import TodoItem from "./TodoItem";
+import TodoSection from "./TodoSection";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -28,30 +28,21 @@ function App() {
   return (
     <>
       <div className="todo-container">
+        <h1 id="header-title">My Todo List</h1>
         <TodoForm addTodo={addTodo} />
         <div>
-          <div className="working-todos">
-            <h2>Working..🔥</h2>
-            {workingTodos.map((todo) => (
-              <TodoItem
-                key={todo.id}
-                todo={todo}
-                deleteTodo={deleteTodo}
-                toggleStatus={toggleStatus}
-              />
-            ))}
-          </div>
-          <div className="done-todos">
-            <h2>Done..🎉</h2>
-            {doneTodos.map((todo) => (
-              <TodoItem
-                key={todo.id}
-                todo={todo}
-                deleteTodo={deleteTodo}
-                toggleStatus={toggleStatus}
-              />
-            ))}
-          </div>
+          <TodoSection
+            title="Working..🔥"
+            todos={workingTodos}
+            deleteTodo={deleteTodo}
+            toggleStatus={toggleStatus}
+          />
+          <TodoSection
+            title="Done..🎉"
+            todos={doneTodos}
+            deleteTodo={deleteTodo}
+            toggleStatus={toggleStatus}
+          />
         </div>
       </div>
     </>

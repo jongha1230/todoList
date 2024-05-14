@@ -1,0 +1,17 @@
+.todo-container {
+  max-width: 1200px;
+  min-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#header-title {
+  font-size: 30px;
+  text-align: center;
+}
+
+.todo-item-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-
+import "./TodoForm.css";
 function TodoForm({ addTodo }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -19,18 +19,20 @@ function TodoForm({ addTodo }) {
   };
 
   return (
-    <form onSubmit={onSubmitHandler}>
+    <form className="todo-form" onSubmit={onSubmitHandler}>
       <input
         type="text"
         placeholder="제목"
         value={title}
         onChange={(event) => setTitle(event.target.value)}
+        className="todo-title-input"
       />
       <input
         type="text"
         placeholder="내용"
         value={content}
         onChange={(event) => setContent(event.target.value)}
+        className="todo-content-input"
       />
       <button type="submit">추가</button>
     </form>

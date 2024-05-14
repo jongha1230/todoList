@@ -1,0 +1,64 @@
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 20em;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.todo-item h3,
+.todo-item p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 표시할 줄 수 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.delete-btn,
+.toggle-btn {
+  color: white;
+  width: 100px;
+  height: 40px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn {
+  background-color: rgba(255, 51, 102, 1);
+}
+
+.delete-btn:hover {
+  background-color: rgba(255, 0, 51, 1);
+}
+
+.todo-section:nth-of-type(1) .toggle-btn {
+  background-color: rgba(27, 189, 85, 1);
+}
+
+.todo-section:nth-of-type(1) .toggle-btn:hover {
+  background-color: rgba(17, 139, 65, 1);
+}
+
+.todo-section:nth-of-type(2) .toggle-btn {
+  background-color: rgba(51, 102, 255, 1);
+}
+
+.todo-section:nth-of-type(2) .toggle-btn:hover {
+  background-color: rgb(43, 90, 179);
+}
