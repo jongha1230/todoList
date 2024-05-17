@@ -11,11 +11,12 @@ function App() {
   };
 
   const deleteTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    setTodos((todos) => todos.filter((todo) => todo.id !== id));
+    // setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   const toggleStatus = (id) => {
-    setTodos(
+    setTodos((todos) =>
       todos.map((todo) =>
         todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
       )

@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./TodoForm.css";
 function TodoForm({ addTodo }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const titleInputRef = useRef(null);
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -16,11 +17,13 @@ function TodoForm({ addTodo }) {
     addTodo(title, content);
     setTitle("");
     setContent("");
+    titleInputRef.current.focus();
   };
 
   return (
     <form className="todo-form" onSubmit={onSubmitHandler}>
       <input
+        ref={titleInputRef}
         type="text"
         placeholder="제목"
         value={title}

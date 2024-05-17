@@ -3,7 +3,7 @@ import TodoItem from "./TodoItem";
 
 function TodoSection({ title, todos, deleteTodo, toggleStatus }) {
   return (
-    <div className="todo-section" style={{ margin: "20px" }}>
+    <section className="todo-section" style={{ margin: "20px" }}>
       <h2>{title}</h2>
       <div className="todo-item-wrap">
         {todos.map((todo) => (
@@ -15,7 +15,7 @@ function TodoSection({ title, todos, deleteTodo, toggleStatus }) {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

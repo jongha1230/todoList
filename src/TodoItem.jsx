@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import "./TodoItem.css";
 function TodoItem({ todo, deleteTodo, toggleStatus }) {
   return (
-    <div className="todo-item">
+    <article className="todo-item">
       <h3>{todo.title}</h3>
       <p>{todo.content}</p>
       <div className="btn-wrap">
@@ -13,7 +13,7 @@ function TodoItem({ todo, deleteTodo, toggleStatus }) {
           {todo.isDone ? "취소" : "완료"}
         </button>
       </div>
-    </div>
+    </article>
   );
 }
 
