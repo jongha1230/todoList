@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import "./TodoItem.css";
+
 function TodoItem({ todo, deleteTodo, toggleStatus }) {
   return (
     <article className="todo-item">
@@ -18,7 +19,12 @@ function TodoItem({ todo, deleteTodo, toggleStatus }) {
 }
 
 TodoItem.propTypes = {
-  todo: PropTypes.object.isRequired,
+  todo: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+    isDone: PropTypes.bool.isRequired,
+  }).isRequired,
   deleteTodo: PropTypes.func.isRequired,
   toggleStatus: PropTypes.func.isRequired,
 };

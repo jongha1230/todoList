@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useRef, useState } from "react";
 import "./TodoForm.css";
+
 function TodoForm({ addTodo }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");

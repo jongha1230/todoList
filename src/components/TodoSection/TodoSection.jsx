@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import TodoItem from "./TodoItem";
+import TodoItem from "../TodoItem";
 
 function TodoSection({ title, todos, deleteTodo, toggleStatus }) {
   return (
@@ -21,7 +21,14 @@ function TodoSection({ title, todos, deleteTodo, toggleStatus }) {
 
 TodoSection.propTypes = {
   title: PropTypes.string.isRequired,
-  todos: PropTypes.array.isRequired,
+  todos: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
+      isDone: PropTypes.bool.isRequired,
+    })
+  ).isRequired,
   deleteTodo: PropTypes.func.isRequired,
   toggleStatus: PropTypes.func.isRequired,
 };
